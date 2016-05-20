@@ -9,7 +9,6 @@
 $tituloPagina = "Página Inicial";
 
 
-
 require("view/top.template.php");
 require("view/index.view.php");
 require("view/bottom.template.php");
