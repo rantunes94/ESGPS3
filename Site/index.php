@@ -1,10 +1,11 @@
-<?php 
+﻿<?php 
 
 	require_once("inc/controllerInit.php");
 	
 
 
 // Variáveis usadas pelo do template
+// o meu comentario
 $tituloPagina = "Página Inicial";
 
 
