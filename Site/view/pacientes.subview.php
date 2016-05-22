@@ -12,7 +12,6 @@
 		</thead>		  
 		<tbody>
 		 	<?php
-		 		
 		 		foreach ($pacientes as $linha) {
 					echo "\n<tr>";
 					echo "<td>".$linha['nomeP']."</td>";
@@ -33,16 +32,20 @@
 		    <?php } ?>	
 		</tbody>
 	</table>
-	<div class="dropdown"><label>Número de Pacientes por Página
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	 <form action="pacientes.php" method="post" class="form" id="limit" name="limit">
+	<label>Número de Pacientes por Página
+  <button class="btn btn-default dropdown-toggle" type="button" id="limit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     20
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">30</a></li>
-    <li><a href="#">50</a></li>
-    <li><a href="#">100</a></li>
+  
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="limit" name="limit">
+    <li id="limit" name="limit"><a href="pacientes.php">30</a></li>
+    <li id="limit" name="limit"><a href="pacientes.php">50</a></li>
+    <li id="limit" name="limit"><a href="pacientes.php">100</a></li>
   </ul>
+  <?php var_dump($pacientes) ?>
+  <input type="submit" id="idSubmit" value="Alterar Paginacao" class="btn btn-primary">
 </div>
 	<hr>
 </fieldset>

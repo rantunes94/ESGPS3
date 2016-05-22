@@ -50,10 +50,13 @@ function validarPaciente($nomeP, $moradaP, $snsP, $dataNascimP){
 	return $arrayMensagens;	
 }
 
-function listarPaciente(){
+function listarPaciente($limit){
+	$limit=7;
 	$query = "SELECT id, nomeP, moradaP, snsP, dataNascimP ".
-	         "FROM paciente";
+	         "FROM paciente LIMIT ".$limit."";
 	$stmt= db()->prepare($query);
+	var_dump($limit);
+
 	$stmt->execute();
 	$result = $stmt->get_result();
 	return $result->fetch_all(MYSQL_ASSOC);
