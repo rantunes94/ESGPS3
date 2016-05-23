@@ -55,7 +55,7 @@
         </div>      
     </div>    
     <div class='col-xs-12 text-center'> 
-        <a class="btn btn-info" href="#" role="button">Lista Utilizadores</a>
+        <a class="btn btn-info" href="utilizadores.php" role="button">Lista Utilizadores</a>
         <a class="btn btn-primary" href="utilizador_update.php?id=<?php echo $data["id"];?>" role="button">Alterar Utilizador</a>
     </div>
 </div>  

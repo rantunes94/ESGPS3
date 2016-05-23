@@ -1,5 +1,7 @@
 <?php require_once("inc/viewUtils.php"); ?>
 
+
+
 <hr>
 <a class="btn btn-info" href="utilizadores_create.php" role="button">Novo Utilizador</a>
 <hr>
@@ -13,3 +15,21 @@
 	
 </form>
 <br> 
+
+
+<!-- <?php
+//require_once("inc/viewUtils.php")
+?>
+
+<hr>
+<a class="btn btn-info" href="utilizadores_create.php" role="button">Novo Utilizador</a>
+<hr>
+
+<form action="utilizadores.php" method="get">
+
+<label for="idNomeP">Nome</label> 
+<input type="text" id="idNome" name="nome" value="<?php echo $nome; ?>" class="form-control">
+<br><br>
+<input type="submit" id="idSubmit" value="Filtrar" class="btn btn-primary">	
+
+</form> -->

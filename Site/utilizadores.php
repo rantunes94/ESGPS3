@@ -40,9 +40,7 @@
 	if (isset($_GET['dataNascimento']))
 		$data_nascimento = $_GET['dataNascimento'];
 
-
-
- 	$utilizadores = filterUtilizadoresNome($name,$type,$active,$nome,$morada,$sns,$dataNascimento);
+ 	$utilizadores = filterUtilizadoresNome($nome);
 
 	// Variáveis usadas pelo do template
 	$tituloPagina = "Lista de Utilizadores";

@@ -91,16 +91,15 @@ function obtemUtilizador($id)
 
 
 function filterUtilizadoresNome($nome){
-	$query = "SELECT id, name, type, active, nome, morada, sns, dataNascimento".
-	         " FROM users".
-	         " WHERE (nome LIKE ?)";
+	$query = "SELECT id, name, type, active, nome, morada, sns, dataNascimento  ".
+	         "FROM users ".
+			"  WHERE (nome like ?)";
 
-	$nome = "%" . $nome . "%";
-	
+	$nome= "%$nome%";
 	$stmt= db()->prepare($query);
 	$stmt->bind_param("s", $nome);
 	$stmt->execute();
 	$result = $stmt->get_result();
 	return $result->fetch_all(MYSQL_ASSOC);
-} 
+}
 
