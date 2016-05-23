@@ -6,9 +6,9 @@
 	
 	require_once("model/pacientes.model.php");
 	//require_once("model/utilizadores.model.php");
-	//require_once("model/carrinho.model.php");
+	require_once("model/carrinho.model.php");
 	//$listaUtilizadores = getInfoUtilizadores();	
-	//$qtdProdutosNoCarrinho = getTotalQuantidadesCarrinho();
+	$qtdProdutosNoCarrinho = getTotalQuantidadesCarrinho();
 
 // Inicialização de variáveis em todos os controladores 
 	// Todos os controladores (páginas)? 
