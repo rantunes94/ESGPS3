@@ -56,6 +56,7 @@
 </form>
 <br>
 
+<a href="pacientes_pesquisar.php" class="btn btn-default" role="button">Pesquisar Paciente</a>
 <button type="button" class="btn btn-default">Ver Medicação</button>
 <button type="button" class="btn btn-default">Adicionar Medicação</button>
 <button type="button" class="btn btn-default">Ver Exames</button>
