@@ -63,6 +63,16 @@
                 <li>
                 <a href='pacientes.php'>Pacientes</a>
                         </li>
+                <?php endif; ?>
+                 <?php if (isUserDou()): ?>  
+                <li>
+                <a href='pacientes.php'>Pacientes</a>
+                        </li>
+                <?php endif; ?> 
+                 <?php if (isUserEnf()): ?>  
+                <li>
+                <a href='pacientes.php'>Pacientes</a>
+                        </li>
                 <?php endif; ?> 
                 </ul>    
 
