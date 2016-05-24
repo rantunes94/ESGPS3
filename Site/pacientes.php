@@ -3,7 +3,7 @@
 	require_once("inc/controllerInit.php");
 	require_once("model/autenticacao.model.php");
 
-		if (!isUserRec()){
+		if (isUserAdmin()){
 		header("Location: login.php");
 		exit;	
 	}
