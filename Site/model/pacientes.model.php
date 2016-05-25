@@ -50,13 +50,10 @@ function validarPaciente($nomeP, $moradaP, $snsP, $dataNascimP){
 	return $arrayMensagens;	
 }
 
-function listarPaciente($limit){
-	$limit=7;
+function listarPaciente(){
 	$query = "SELECT id, nomeP, moradaP, snsP, dataNascimP ".
-	         "FROM paciente LIMIT ".$limit."";
+	    "FROM paciente"; 
 	$stmt= db()->prepare($query);
-	var_dump($limit);
-
 	$stmt->execute();
 	$result = $stmt->get_result();
 	return $result->fetch_all(MYSQL_ASSOC);
@@ -78,6 +75,21 @@ function obtemPaciente($id)
 		return $arrayFromDB[0];
 }
 
+function obtemNomePaciente($id)
+{
+	$query = "SELECT nomeP ".
+	         "FROM paciente ".
+	         "where id=?";
+	$stmt= db()->prepare($query);
+	$stmt->bind_param("i",$id);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$arrayFromDB= $result->fetch_all(MYSQL_ASSOC);
+	if (count($arrayFromDB) != 1)
+		return NULL;
+	else
+		return $arrayFromDB[0];
+}
 
 function alterarPaciente($id, $nomeP, $moradaP, $snsP, $dataNascimP)
 {
@@ -115,51 +127,3 @@ function apagarPaciente($id)
 	return true;
 }
 
-function FilterPacientesNome($nomeP){
-	$query = "SELECT id, nomeP, moradaP, snsP, dataNascimP ".
-	         "FROM paciente ".
-			"  WHERE (nomeP like ?)";
-
-	$nome= "%$nomeP%";
-	$stmt= db()->prepare($query);
-	$stmt->bind_param("s", $nomeP);
-	$stmt->execute();
-	$result = $stmt->get_result();
-	return $result->fetch_all(MYSQL_ASSOC);
-}
-function FilterPacientesMorada($moradaP){
-	$query = "SELECT id, nomeP, moradaP, snsP, dataNascimP ".
-	         "FROM paciente ".
-			"  WHERE (moradaP like ?)";
-
-	$nome= "%$moradaP%";
-	$stmt= db()->prepare($query);
-	$stmt->bind_param("s", $moradaP);
-	$stmt->execute();
-	$result = $stmt->get_result();
-	return $result->fetch_all(MYSQL_ASSOC);
-}
-function FilterPacientesSNS($snsP){
-	$query = "SELECT id, nomeP, moradaP, snsP, dataNascimP ".
-	         "FROM paciente ".
-			"  WHERE (snsP like ?)";
-
-	$nome= "%$snsP%";
-	$stmt= db()->prepare($query);
-	$stmt->bind_param("s", $snsP);
-	$stmt->execute();
-	$result = $stmt->get_result();
-	return $result->fetch_all(MYSQL_ASSOC);
-}
-function FilterPacientesDataNascim($dataNascimP){
-	$query = "SELECT id, nomeP, moradaP, snsP, dataNascimP ".
-	         "FROM paciente ".
-			"  WHERE (dataNascimP like ?)";
-
-	$nome= "%$dataNascimP%";
-	$stmt= db()->prepare($query);
-	$stmt->bind_param("s", $dataNascimP);
-	$stmt->execute();
-	$result = $stmt->get_result();
-	return $result->fetch_all(MYSQL_ASSOC);
-}

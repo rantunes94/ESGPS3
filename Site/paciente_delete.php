@@ -1,8 +1,13 @@
 <?php 
 	require_once("model/pacientes.model.php");
 	require_once("inc/controllerInit.php");
-	//require_once("model/autenticacao.model.php");
+	require_once("model/autenticacao.model.php");
 
+	if (!isUserRec()){
+		header("Location: login.php");
+		exit;	
+	}
+	
 	$deleteOK = false;
 	if (!empty($_POST)) 
 		if (isset($_POST["id"]))			

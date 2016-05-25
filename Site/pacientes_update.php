@@ -1,8 +1,13 @@
 <?php 
 	require_once("model/pacientes.model.php");
 	require_once("inc/controllerInit.php");
-	//require_once("model/autenticacao.model.php");
+	require_once("model/autenticacao.model.php");
 
+	if (!isUserRec()){
+		header("Location: login.php");
+		exit;	
+	}
+	
 	// Iniciação das variáveis obrigatórios na vista:
 	$tituloPagina = "Alterar Pacientes";
 	$operacao = "U";
