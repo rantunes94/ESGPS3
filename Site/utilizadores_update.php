@@ -43,7 +43,6 @@
 				$_SESSION["flash_msgGlobal"] = "O utilizador foi alterado com sucesso";
 				$_SESSION["flash_tipoMsgGlobal"] = "S";
 
-
 				header("Location: utilizador_show.php?id=".$data["id"]);
 				//header("Location: utilizadores.php");
 				exit;			

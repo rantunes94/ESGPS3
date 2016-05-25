@@ -11,10 +11,17 @@
 		
 	
 	<form action="utilizadores_update.php" method="post" class="form">
-		
-
-	  		
+	
 	<div class="form-group">
+		<div <?php echoClassformGroup('id',$msgErros,$dadosSubmetidos);?>>
+			<label for="idid"></label> 
+			<input type="hidden" id="idNome" name="id" readonly="readonly"<?php echoFieldValue("id", $data) ?> class="form-control">
+			<?php echoMsgErro("nome", $msgErros) ?>
+		</div>
+	</div>	
+	<br><br>
+
+	  		<div class="form-group">
 		<div <?php echoClassformGroup('nome',$msgErros,$dadosSubmetidos);?>>
 			<label for="idNome">Nome</label> 
 			<input type="text" id="idNome" name="nome"<?php echoFieldValue("nome", $data) ?> class="form-control">
@@ -74,8 +81,8 @@
 	<br><br>
 		<div class="form-group">
 		<div <?php echoClassformGroup('type',$msgErros,$dadosSubmetidos);?>>
-			<label for="idType">Ativo</label>
-			<input type="text"  id="idType" name="active"<?php echoFieldValue("active", $data) ?> class="form-control">
+			<label for="idType"></label>
+			<input type="hidden"  id="idType" name="active" readonly="readonly"<?php echoFieldValue("active", $data) ?> class="form-control">
 			<?php echoMsgErro("type", $msgErros) ?>
 		</div>
 	</div>
