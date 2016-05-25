@@ -12,7 +12,7 @@
 	if (empty($_POST)) { // Formulário não foi submetido - é um pedido GET
 		$data = NULL;
 		if (isset($_GET["id"])) 
-			$data = obtemPaciente($_GET["id"]);
+			$data = obtemUtilizador($_GET["id"]);
 		if ($data == NULL) {
 			header("Location: notFound.php");
 			exit;

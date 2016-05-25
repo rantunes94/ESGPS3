@@ -37,6 +37,7 @@
 				
 	<?php if (isUserAdmin()): ?>
 					<?php echo '<td><a class="btn btn-primary" href="utilizadores_update.php?id='.$linha['id'].'" role="button">Alterar</a></td>';?>
+					
 					<?php echo '<td><a class="btn btn-primary" href="utilizadores_suspender.php?id='.$linha['id'].'" role="button">Suspender</a></td>';?>
 				
 						
