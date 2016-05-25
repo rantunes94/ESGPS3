@@ -32,14 +32,20 @@
 					echo "<td>".$linha['dataNascimento']."</td>";
 					
 					
-
-
-					?>
-				<?php if (isUserAdmin()): ?>
+	?>
+				
+	<?php if (isUserAdmin()): ?>
 					<?php echo '<td><a class="btn btn-primary" href="utilizadores_update.php?id='.$linha['id'].'" role="button">Alterar</a></td>';?>
+
+
+
+				
 						<td>
 							<form action="#" method="POST">
-								<input type="hidden" name="id" value="<?php echo $linha['id'];?>">
+
+				
+
+								 <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
 								<input type="submit" class="btn btn-danger" role="button" value="Suspender">
 							</form>
 						</td>

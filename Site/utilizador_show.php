@@ -26,6 +26,7 @@
 	if (isset($_GET["id"])) {
 		$data = obtemUtilizador($_GET["id"]);
 		if ($data == NULL) {
+			//var_dump($data);
 			header("Location: notFound.php");
 			exit;
 		}

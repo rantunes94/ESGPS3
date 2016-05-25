@@ -8,11 +8,10 @@
 	</div>
 <?php endif; ?>  
 
- <?php if ($operacao=="I") : ?>
-    <form action="utilizadores_create.php" method="post" class="form">
- <?php else: ?>
-    <form action="utilizadores_update.php" method="post" class="form">
- <?php endif; ?>
+		
+	
+	<form action="utilizadores_update.php" method="post" class="form">
+		
 
 	  		
 	<div class="form-group">
@@ -73,15 +72,21 @@
 		</div>
 	</div>
 	<br><br>
+		<div class="form-group">
+		<div <?php echoClassformGroup('type',$msgErros,$dadosSubmetidos);?>>
+			<label for="idType">Ativo</label>
+			<input type="text"  id="idType" name="active"<?php echoFieldValue("active", $data) ?> class="form-control">
+			<?php echoMsgErro("type", $msgErros) ?>
+		</div>
+	</div>
+	<br><br>
 
-
- <div class='col-xs-12 text-center'> 
+  <div class='col-xs-12 text-center'> 
             <input type="reset" id="idReset" value="Limpar" class="btn btn-warning">  
-             <?php if ($operacao=="I") : ?>
-                <input type="submit" id="idSubmit" value="Alterar Cliente" class="btn btn-primary"> 
-             <?php else: ?>
-                <input type="submit" id="idSubmit" value="Criar Cliente" class="btn btn-primary"> 
-             <?php endif; ?>
+            <input type="submit" id="idSubmit" value="Alterar Paciente" class="btn btn-primary"> 
+            
+  
+        </div>
                         
         </div>
         <br><br>

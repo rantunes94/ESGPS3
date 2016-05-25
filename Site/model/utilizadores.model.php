@@ -16,6 +16,7 @@ function inserirUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascime
 	try {
 		$query = "INSERT INTO users (name,password,type,nome,morada,sns,dataNascimento) values (?,?,?,?,?,?,?)";
 		//echo $query;
+		//var_dump($query); exit;
 		$stmt= db()->prepare($query);
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 		$stmt->bind_param("sssssss",$name,$hash,$type,$nome,$morada,$sns,$dataNascimento);
@@ -89,6 +90,22 @@ function obtemUtilizador($id)
 		return $arrayFromDB[0];
 }
 
+function obtemUtilizador2($id)
+{
+	$query = "SELECT id, name,password, type,active, nome, morada, sns, dataNascimento".
+	         " FROM users ".
+	         "WHERE id=?";
+	$stmt= db()->prepare($query);
+	$stmt->bind_param("i",$id);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$arrayFromDB= $result->fetch_all(MYSQL_ASSOC);
+	if (count($arrayFromDB) != 1)
+		return NULL;
+	else
+		return $arrayFromDB[0];
+}
+
 
 function filterUtilizadoresNome($nome){
 	$query = "SELECT id, name, type, active, nome, morada, sns, dataNascimento  ".
@@ -105,14 +122,34 @@ function filterUtilizadoresNome($nome){
 
 
 							
-function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascimento)
+// function alterarUtilizador($name,$password,$type,$active,$nome,$morada,$sns,$dataNascimento,$id)
+// {
+// 	try {
+// 		$query = "UPDATE users SET name=?, password=?, type=?, active=?, nome=?, morada=?, sns=?, dataNascimento=?".	   
+// 		        " WHERE id=".$id." ";
+// 		        //" WHERE id=?";
+// 		$stmt= db()->prepare($query);
+// 		$hash = password_hash($password, PASSWORD_DEFAULT);
+// 		$stmt->bind_param("ssssivsss", $name,$hash,$type,$active,$nome,$morada,$sns,$dataNascimento);
+// 		$stmt->execute();
+// 		// Nota: Se o update correu bem, a propriedade affected_rows deve ter os seguintes valores:
+// 		// 1 - foi alterado um registo
+// 		// 0 - a operação correu bem, mas não foi alterado nada (não afetou nenhum registo)
+// 		if ((db()->affected_rows >1) || (db()->affected_rows <0))
+// 			throw new Exception("Erro - algo se passou");
+// 	} catch(Exception $e) {
+// 		return false;
+// 	}
+// 	return true;
+// } 
+
+function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascimento,$id)
 {
 	try {
-		$query = "UPDATE users SET name=?, password=?, type=?, nome=?, morada=?, sns=?, dataNascimento=?".
-		         " WHERE id=".$id."";
+		$query = "UPDATE users SET name=?, password=?, type=?, nome=?, morada=?, sns=?, dataNascimento=? ".
+		         "WHERE id=?";
 		$stmt= db()->prepare($query);
-		$hash = password_hash($password, PASSWORD_DEFAULT);
-		$stmt->bind_param("sssssssi", $name,$hash,$type,$nome,$morada,$sns,$dataNascimento);
+		$stmt->bind_param("sssssssi",  $name, $password, $type, $nome, $morada, $sns, $dataNascimento, $id);
 		$stmt->execute();
 		// Nota: Se o update correu bem, a propriedade affected_rows deve ter os seguintes valores:
 		// 1 - foi alterado um registo
@@ -124,6 +161,8 @@ function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascime
 	}
 	return true;
 } 
+
+
 
 function suspenderUtilizador($active,$id)
 {
