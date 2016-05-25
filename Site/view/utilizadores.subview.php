@@ -1,4 +1,5 @@
  <?php  require_once("model/autenticacao.model.php") ?> 
+  <?php  require_once("model/utilizadores.model.php") ?>
 	<table class="table">
 		<thead>
 	  		<tr>
@@ -36,19 +37,10 @@
 				
 	<?php if (isUserAdmin()): ?>
 					<?php echo '<td><a class="btn btn-primary" href="utilizadores_update.php?id='.$linha['id'].'" role="button">Alterar</a></td>';?>
-
-
-
+					<?php echo '<td><a class="btn btn-primary" href="utilizadores_suspender.php?id='.$linha['id'].'" role="button">Suspender</a></td>';?>
 				
-						<td>
-							<form action="#" method="POST">
+						
 
-				
-
-								 <input type="hidden" name="id" value="<?php echo $linha['id'];?>">
-								<input type="submit" class="btn btn-danger" role="button" value="Suspender">
-							</form>
-						</td>
 					</tr>
 				<?php endif; ?>
 		    <?php } ?>	

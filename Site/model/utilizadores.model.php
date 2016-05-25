@@ -149,7 +149,8 @@ function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascime
 		$query = "UPDATE users SET name=?, password=?, type=?, nome=?, morada=?, sns=?, dataNascimento=? ".
 		         "WHERE id=?";
 		$stmt= db()->prepare($query);
-		$stmt->bind_param("sssssssi",  $name, $password, $type, $nome, $morada, $sns, $dataNascimento, $id);
+		$hash = password_hash($password, PASSWORD_DEFAULT);
+		$stmt->bind_param("sssssssi",  $name, $hash, $type, $nome, $morada, $sns, $dataNascimento, $id);
 		$stmt->execute();
 		// Nota: Se o update correu bem, a propriedade affected_rows deve ter os seguintes valores:
 		// 1 - foi alterado um registo
@@ -163,6 +164,17 @@ function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascime
 } 
 
 
+function validarUtilizadorSusp($active){
+	$arrayMensagens = array();
+
+	if (trim($active)=="")
+		$arrayMensagens["active"] = "O estado é obrigatório";
+	else
+		if(trim($active)!='1' && trim($type)!='0' )
+		$arrayMensagens["active"] = "O estado da conta tem que ser 0(inactiva) ou 1(ativa)";
+
+	return $arrayMensagens;	
+}
 
 function suspenderUtilizador($active,$id)
 {
@@ -182,21 +194,3 @@ function suspenderUtilizador($active,$id)
 	}
 	return true;
 } 
-
-function apagarCliente($id)
-{
-	try {
-		$query = "DELETE from cliente WHERE ID=?";
-		$stmt= db()->prepare($query);
-		$stmt->bind_param("i", $id);
-		$stmt->execute();
-		// Nota: Se o delete correu bem, a propriedade affected_rows deve ter o seguinte valor:
-		// 1 - foi apagado um registo
-		if (db()->affected_rows !=1)
-			throw new Exception("Erro - algo se passou");
-	} catch(Exception $e) {
-		return false;
-	}
-	return true;
-}
-
