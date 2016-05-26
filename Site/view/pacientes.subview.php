@@ -20,9 +20,11 @@
 					
 					?>
 					<?php echo '<td><a class="btn btn-info" href="pacientes_update.php?id='.$linha['id'].'" role="button">Alterar</a></td>';?>
+					<?php if (isUserRec()) :  ?>
 					<?php echo '<td><a class="btn btn-warning" href="exame.php?id='.$linha['id'].'" role="button">Adicionar Exame</a></td>';?>
 					
 					<?php echo '<td><a class="btn btn-warning" href="medicacao.php?id='.$linha['id'].'" role="button">Adicionar Medicação</a></td>';?>
+				<?php endif ?>
 						<td>
 							<form action="paciente_delete.php" method="POST">
 								<input type="hidden" name="id" value="<?php echo $linha['id'];?>">
@@ -34,8 +36,9 @@
 		    <?php } ?>	
 		</tbody>
 	</table>
+	<a class="btn btn-info" href="pacientes_pesquisar.php" role="button">Pesquisar Paciente</a>
 	 <form action="pacientes.php" method="post" class="form" id="limit" name="limit">
-	<label>Número de Pacientes por Página
+	<label>Número de Pacientes por Página</label>
   <button class="btn btn-default dropdown-toggle" type="button" id="limit value="20" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     20
     <span class="caret"></span>
@@ -46,7 +49,9 @@
     <li id="limit" name="limit" value="100"><a href="pacientes.php">100</a></li>
   </ul>
 
+
 </div>
   <input type="submit" id="idSubmit" value="Alterar Paginacao" class="btn btn-primary">
 	<hr>
+</form>
 </fieldset>
