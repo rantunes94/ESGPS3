@@ -30,7 +30,7 @@
 			
  <div class='col-xs-12 text-center'> 
             <input type="reset" id="idReset" value="Limpar" class="btn btn-warning">  
-            <input type="submit" id="idSubmit" value="Suspender Utilizador" class="btn btn-primary"> 
+            <input type="submit" id="idSubmit" value="Alterar Estado" class="btn btn-primary"> 
   
         </div>
         <br>

@@ -4,7 +4,7 @@
 	//require_once("model/autenticacao.model.php");
 
 	// Iniciação das variáveis obrigatórios na vista:
-	$tituloPagina = "Suspender Utilizadoress";
+	$tituloPagina = "Alterar Estado";
 	$operacao = "U";
 	$msgErros = array();
 	$dadosSubmetidos= false;
