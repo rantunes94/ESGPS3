@@ -51,7 +51,8 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Utilizadores<b class="caret"></b></a>
                                 <ul class="dropdown-menu">    
                                     <li><a href='utilizadores_create.php'>Adicionar Utilizador</a></li>
-                                    <li><a href='utilizadores.php'>Pesquisar Utilizador</a></li>
+                                    <li><a href='utilizadores.php'>Lista de Utilizadores</a></li>
+                                    
                                 </ul>
                         </li>
                     
