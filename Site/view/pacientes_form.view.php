@@ -54,10 +54,7 @@
 </form>
 <br>
 
-<button type="button" class="btn btn-default">Ver Medicação</button>
-
-
-<fieldset>
+ <fieldset>
 	<br>
 		<br>
 	

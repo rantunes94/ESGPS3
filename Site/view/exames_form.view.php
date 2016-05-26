@@ -10,7 +10,7 @@
 
 	<fieldset>
     <legend>Criar Exame</legend>
-	<form action="medicacao_create.php" method="post" class="form-inline">
+	<form action="exame_create.php" method="post" class="form-inline">
 	
 	<div class="form-group">
 		<div <?php echoClassformGroup('id',$msgErros,$dadosSubmetidos);?>>
@@ -59,5 +59,3 @@
 <?php endif; ?> 
 	<br><br>
 </form>
-
-	

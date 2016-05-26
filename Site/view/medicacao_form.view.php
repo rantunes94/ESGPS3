@@ -67,5 +67,3 @@
 <?php endif; ?> 
 	<br><br>
 </form>
-
-	

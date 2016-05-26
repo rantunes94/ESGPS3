@@ -3,15 +3,6 @@
 	require_once("inc/controllerInit.php");
 	require_once("model/autenticacao.model.php");
 
-if (isUserAdmin()){
-		header("Location: login.php");
-		exit;	
-	}
-	if (isUserAnonimo()){
-		header("Location: login.php");
-		exit;	
-	}
-
 	$data = array();
 	$id="";
 	$nomeP = "";
