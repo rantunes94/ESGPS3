@@ -110,7 +110,7 @@ function obtemUtilizador2($id)
 function filterUtilizadoresNome($nome){
 	$query = "SELECT id, name, type, active, nome, morada, sns, dataNascimento  ".
 	         "FROM users ".
-			"  WHERE (nome like ?)";
+			" WHERE (nome like ?)";
 
 	$nome= "%$nome%";
 	$stmt= db()->prepare($query);
@@ -120,28 +120,19 @@ function filterUtilizadoresNome($nome){
 	return $result->fetch_all(MYSQL_ASSOC);
 }
 
+function FilterUtilizadoreSNS($sns){
+	$query = "SELECT id, name, type, active, nome, morada, sns, dataNascimento ".
+	         "FROM users ".
+			" WHERE (sns like ?)";
 
-							
-// function alterarUtilizador($name,$password,$type,$active,$nome,$morada,$sns,$dataNascimento,$id)
-// {
-// 	try {
-// 		$query = "UPDATE users SET name=?, password=?, type=?, active=?, nome=?, morada=?, sns=?, dataNascimento=?".	   
-// 		        " WHERE id=".$id." ";
-// 		        //" WHERE id=?";
-// 		$stmt= db()->prepare($query);
-// 		$hash = password_hash($password, PASSWORD_DEFAULT);
-// 		$stmt->bind_param("ssssivsss", $name,$hash,$type,$active,$nome,$morada,$sns,$dataNascimento);
-// 		$stmt->execute();
-// 		// Nota: Se o update correu bem, a propriedade affected_rows deve ter os seguintes valores:
-// 		// 1 - foi alterado um registo
-// 		// 0 - a operação correu bem, mas não foi alterado nada (não afetou nenhum registo)
-// 		if ((db()->affected_rows >1) || (db()->affected_rows <0))
-// 			throw new Exception("Erro - algo se passou");
-// 	} catch(Exception $e) {
-// 		return false;
-// 	}
-// 	return true;
-// } 
+	$sns= "%$sns%";
+	$stmt= db()->prepare($query);
+	$stmt->bind_param("s", $sns);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	return $result->fetch_all(MYSQL_ASSOC);
+}
+
 
 function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascimento,$id)
 {
