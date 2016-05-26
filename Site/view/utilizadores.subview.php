@@ -5,7 +5,7 @@
 	  		<tr>
 				<th>Username</th>
 				<th>Tipo de Conta</th>
-				<th>Activa</th>
+				<th>Estado</th>
 				<th>Nome</th>
 				<th>Morada</th>
 				<th>SNS</th>
@@ -22,11 +22,20 @@
 		 		foreach ($utilizadores as $linha) {
 					echo "\n<tr>";
 					echo "<td>".$linha['name']."</td>";
-					echo "<td>".$linha['type']."</td>";
+					//echo "<td>".$linha['type']."</td>";
+					if ($linha['type'] == "A")
+						echo "<td>Admin</td>";
+					if ($linha['type'] == "R")
+						echo "<td>Recepcionista</td>";
+					if ($linha['type'] == "M")
+						echo "<td>Médico</td>";
+					if ($linha['type'] == "E")
+						echo "<td>Enfermeiro</td>";
+					
 					if ($linha['active'] == "1")
-						echo "<td>Sim</td>";
+						echo "<td>Activa</td>";
 					else
-					 	echo "<td>Não</td>";
+					 	echo "<td>Inactiva</td>";
 					echo "<td>".$linha['nome']."</td>";
 					echo "<td>".$linha['morada']."</td>";
 					echo "<td>".$linha['sns']."</td>";
@@ -37,8 +46,9 @@
 				
 	<?php if (isUserAdmin()): ?>
 					<?php echo '<td><a class="btn btn-primary" href="utilizadores_update.php?id='.$linha['id'].'" role="button">Alterar</a></td>';?>
+
 					
-					<?php echo '<td><a class="btn btn-primary" href="utilizadores_suspender.php?id='.$linha['id'].'" role="button">Suspender</a></td>';?>
+					<?php echo '<td><a class="btn btn-danger" href="utilizadores_suspender.php?id='.$linha['id'].'" role="button">Alterar Estado</a></td>';?>
 				
 						
 

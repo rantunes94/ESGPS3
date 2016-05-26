@@ -152,7 +152,7 @@ function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascime
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 		$stmt->bind_param("sssssssi",  $name, $hash, $type, $nome, $morada, $sns, $dataNascimento, $id);
 		$stmt->execute();
-		// Nota: Se o update correu bem, a propriedade affected_rows deve ter os seguintes valores:
+				// Nota: Se o update correu bem, a propriedade affected_rows deve ter os seguintes valores:
 		// 1 - foi alterado um registo
 		// 0 - a operação correu bem, mas não foi alterado nada (não afetou nenhum registo)
 		if ((db()->affected_rows >1) || (db()->affected_rows <0))
@@ -163,20 +163,16 @@ function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascime
 	return true;
 } 
 
-
 function validarUtilizadorSusp($active){
 	$arrayMensagens = array();
 
-	if (trim($active)=="")
-		$arrayMensagens["active"] = "O estado é obrigatório";
-	else
-		if(trim($active)!='1' && trim($type)!='0' )
+	if(trim($active)=='1' && trim($active)=='0' )
 		$arrayMensagens["active"] = "O estado da conta tem que ser 0(inactiva) ou 1(ativa)";
 
 	return $arrayMensagens;	
 }
 
-function suspenderUtilizador($active,$id)
+function suspenderUtilizador($id,$active)
 {
 	try {
 		$query = "UPDATE users SET active=? ".

@@ -35,7 +35,7 @@
 			else {
 				$userInfo = getUserInfoFromCredenciais($data["username"], $data["senha"]);
 				if ($userInfo == null){
-					$msgGlobal= "Credenciais Inválidas";
+					$msgGlobal= "Credenciais inválidas ou conta inativa";
 					$tipoMsgGlobal = "E";
 				}
 				else {

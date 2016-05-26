@@ -21,9 +21,9 @@
 	</div>	
 	<br>		
 	<div class="form-group">
-		<div <?php echoClassformGroup('nomeP',$msgErros,$dadosSubmetidos);?>>
+		<div <?php echoClassformGroup('active',$msgErros,$dadosSubmetidos);?>>
 			<label for="idActive">Estado(1 ativo/0 inactivo)</label> 
-			<input type="text" id="idActive" name="nomeP"<?php echoFieldValue("active", $data) ?> class="form-control">
+			<input type="text" id="idActive" name="active"<?php echoFieldValue("active", $data) ?> class="form-control">
 			<?php echoMsgErro("active", $msgErros) ?>
 		</div>
 	</div>	
