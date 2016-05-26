@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `medicamento` (
   `nome` varchar(128) NOT NULL,
   `dose` varchar(12) NOT NULL,
   `frequencia` varchar(20) NOT NULL,
+  `m_paciente_id` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -123,7 +124,6 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
   `active` bit(1) NOT NULL,
