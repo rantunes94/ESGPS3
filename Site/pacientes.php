@@ -1,13 +1,21 @@
 ﻿<?php 
 	require_once("model/pacientes.model.php");
 	require_once("inc/controllerInit.php");
-	//require_once("model/autenticacao.model.php");
+	require_once("model/autenticacao.model.php");
+
+		if (isUserAdmin()){
+		header("Location: login.php");
+		exit;	
+	}
+	if (isUserAnonimo()){
+		header("Location: login.php");
+		exit;	
+	}
 	
 	$nomeP = "";
 	$moradaP = "";
 	$snsP = "";
 	$dataNascimP = "";
-
    
 	if (isset($_GET['nomeP']))
 		$nome =$_GET['nomeP'];

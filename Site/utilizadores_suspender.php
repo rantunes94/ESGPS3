@@ -1,15 +1,10 @@
 <?php 
-	require_once("model/pacientes.model.php");
+	require_once("model/utilizadores.model.php");
 	require_once("inc/controllerInit.php");
-	require_once("model/autenticacao.model.php");
+	//require_once("model/autenticacao.model.php");
 
-	if (!isUserRec()){
-		header("Location: login.php");
-		exit;	
-	}
-	
 	// Iniciação das variáveis obrigatórios na vista:
-	$tituloPagina = "Alterar Pacientes";
+	$tituloPagina = "Alterar Estado";
 	$operacao = "U";
 	$msgErros = array();
 	$dadosSubmetidos= false;
@@ -17,7 +12,7 @@
 	if (empty($_POST)) { // Formulário não foi submetido - é um pedido GET
 		$data = NULL;
 		if (isset($_GET["id"])) 
-			$data = obtemPaciente($_GET["id"]);
+			$data = obtemUtilizador($_GET["id"]);
 		if ($data == NULL) {
 			header("Location: notFound.php");
 			exit;
@@ -28,21 +23,21 @@
 		$dadosSubmetidos= true;
 		$data = $_POST;
 
-		$msgErros = validarPaciente($data["nomeP"], $data["moradaP"], $data["snsP"], $data["dataNascimP"]);
+		$msgErros = validarUtilizadorSusp($data["active"]);
 		if (count($msgErros)>0){
 			$msgGlobal= "Existem valores inválidos no formulário";
 			$tipoMsgGlobal = "A";
 		}
 		else {
-			if (alterarPaciente($data["id"], $data["nomeP"], $data["moradaP"], $data["snsP"], $data["dataNascimP"])) {
-				$_SESSION["flash_msgGlobal"] = "O cliente foi alterado com sucesso";
+			if (suspenderUtilizador($data["id"], $data["active"])) {
+				$_SESSION["flash_msgGlobal"] = "O utilizador foi suspendido com sucesso";
 				$_SESSION["flash_tipoMsgGlobal"] = "S";
 				
-				header("Location: pacientes_show.php?id=".$data["id"]);
+				header("Location: utilizadoresSusp_show.php?id=".$data["id"]);
 				exit;			
 				}
 			else {
-				$msgGlobal= "Houve um problema ao alterar o cliente";
+				$msgGlobal= "Houve um problema ao suspender o utilizador";
 				$tipoMsgGlobal = "E";
 			}
 		}
@@ -70,5 +65,5 @@
 	 		// I - Informação 
 			// S - Sucesso
 	require("view/top.template.php");
-	require("view/pacientes_alterar_form.view.php");
+	require("view/utilizadores_suspender_form.view.php");
 	require("view/bottom.template.php");

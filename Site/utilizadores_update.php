@@ -1,15 +1,17 @@
 <?php 
-	require_once("model/pacientes.model.php");
+	require_once("model/utilizadores.model.php");
 	require_once("inc/controllerInit.php");
 	require_once("model/autenticacao.model.php");
 
-	if (!isUserRec()){
+	if (!isUserAdmin()){
+		$_SESSION["flash_loginMessage"]="Não está autorizado a alterar utilizadores";
+		$_SESSION["flash_loginRedirectTo"]= $_SERVER["REQUEST_URI"];
 		header("Location: login.php");
 		exit;	
 	}
-	
+
 	// Iniciação das variáveis obrigatórios na vista:
-	$tituloPagina = "Alterar Pacientes";
+	$tituloPagina = "Alterar Utilizadores";
 	$operacao = "U";
 	$msgErros = array();
 	$dadosSubmetidos= false;
@@ -17,32 +19,36 @@
 	if (empty($_POST)) { // Formulário não foi submetido - é um pedido GET
 		$data = NULL;
 		if (isset($_GET["id"])) 
-			$data = obtemPaciente($_GET["id"]);
+			$data = obtemUtilizador($_GET["id"]);
 		if ($data == NULL) {
-			header("Location: notFound.php");
+			var_dump($data);
+			//header("Location: notFound.php");
 			exit;
 		}
 	}
-
+	
+//, $data["id"]
 	else if (!empty($_POST)) { // Formulário foi submetido - é um pedido POST
 		$dadosSubmetidos= true;
 		$data = $_POST;
 
-		$msgErros = validarPaciente($data["nomeP"], $data["moradaP"], $data["snsP"], $data["dataNascimP"]);
+		$msgErros = validarUtilizador($data["name"], $data["password"], $data["type"], $data["nome"], $data["morada"], $data["sns"], $data["dataNascimento"]);
 		if (count($msgErros)>0){
 			$msgGlobal= "Existem valores inválidos no formulário";
 			$tipoMsgGlobal = "A";
 		}
 		else {
-			if (alterarPaciente($data["id"], $data["nomeP"], $data["moradaP"], $data["snsP"], $data["dataNascimP"])) {
-				$_SESSION["flash_msgGlobal"] = "O cliente foi alterado com sucesso";
+			if (alterarUtilizador($data["name"], $data["password"], $data["type"], $data["nome"], $data["morada"], $data["sns"], $data["dataNascimento"],$data["id"])) {
+
+				$_SESSION["flash_msgGlobal"] = "O utilizador foi alterado com sucesso";
 				$_SESSION["flash_tipoMsgGlobal"] = "S";
-				
-				header("Location: pacientes_show.php?id=".$data["id"]);
+
+				header("Location: utilizador_show.php?id=".$data["id"]);
+				//header("Location: utilizadores.php");
 				exit;			
 				}
 			else {
-				$msgGlobal= "Houve um problema ao alterar o cliente";
+				$msgGlobal= "Houve um problema ao alterar o utilizador";
 				$tipoMsgGlobal = "E";
 			}
 		}
@@ -70,5 +76,5 @@
 	 		// I - Informação 
 			// S - Sucesso
 	require("view/top.template.php");
-	require("view/pacientes_alterar_form.view.php");
+	require("view/utilizadores_alterar_form.view.php");
 	require("view/bottom.template.php");

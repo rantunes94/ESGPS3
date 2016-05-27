@@ -36,7 +36,6 @@
 		    <?php } ?>	
 		</tbody>
 	</table>
-	<a class="btn btn-info" href="pacientes_pesquisar.php" role="button">Pesquisar Paciente</a>
 	 <form action="pacientes.php" method="post" class="form" id="limit" name="limit">
 	<label>Número de Pacientes por Página</label>
   <button class="btn btn-default dropdown-toggle" type="button" id="limit value="20" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

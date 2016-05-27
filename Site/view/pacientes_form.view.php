@@ -2,8 +2,6 @@
 
 <?php if (isset($msgGlobal)) : ?>
 
-
-
 	<div class="<?php echoAlertClass($tipoMsgGlobal);?>">
 		<a href="#" class="close" data-dismiss="alert">&times;</a>
 		<strong><?php echoTipoMensagem($tipoMsgGlobal);?></strong> <?php echo $msgGlobal;?>
@@ -56,12 +54,7 @@
 </form>
 <br>
 
-<button type="button" class="btn btn-default">Ver Medicação</button>
-<button type="button" class="btn btn-default">Adicionar Medicação</button>
-<button type="button" class="btn btn-default">Ver Exames</button>
-<button type="button" class="btn btn-default">Alterar Exames</button>
-
-<fieldset>
+ <fieldset>
 	<br>
 		<br>
 	
