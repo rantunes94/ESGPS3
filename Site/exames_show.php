@@ -1,21 +1,17 @@
 <?php 
+	require_once("model/exames.model.php");
 	require_once("model/pacientes.model.php");
 	require_once("inc/controllerInit.php");
 	require_once("model/autenticacao.model.php");
 
-	if (isUserAdmin()){
-		header("Location: login.php");
-		exit;	
-	}
-	if (isUserAnonimo()){
+	if (!isUserRec()){
 		header("Location: login.php");
 		exit;	
 	}
 
 	// Iniciação das variáveis obrigatórios na vista:
-	$tituloPagina = "Detalhes do Paciente";
-	$data = array();
-	
+	$tituloPagina = "Detalhes do Exame";
+
 	// Variáveis que vêm na Sessão
 	if (isset($_SESSION["flash_msgGlobal"])){
 		$msgGlobal = $_SESSION["flash_msgGlobal"];
@@ -27,7 +23,7 @@
 	}
 
 	if (isset($_GET["id"])) {
-		$data = obtemPaciente($_GET["id"]);
+		$data = obtemExame($_GET["id"]);
 		if ($data == NULL) {
 			header("Location: notFound.php");
 			exit;
@@ -49,5 +45,5 @@
 			// S - Sucesso
 
 	require("view/top.template.php");
-	require("view/detalhepaciente.view.php");
+	require("view/detalhe_exame.php");
 	require("view/bottom.template.php");

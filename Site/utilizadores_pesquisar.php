@@ -15,7 +15,7 @@
 	$active= 0;
 	$nome = "";
 	$morada= "";
-	$sns = 0;
+	$sns = "";
 	$dataNascimento = "";
 	$utilizadores =array();
 	
@@ -42,19 +42,16 @@
 	if (isset($_GET['dataNascimento']))
 		$data_nascimento = $_GET['dataNascimento'];
 
- 	$utilizadores = filterUtilizadoresNome($nome);
+ 	
 
- 	//if ($nome != "")
-		//$utilizadores = filterUtilizadoresNome($nome);
-
- 	//if ($sns != "")
-		//$utilizadores = FilterUtilizadoreSNS($sns);
+ 	if ($sns != "")
+		$utilizadores = FilterUtilizadoreSNS($sns);
 
 
 	// Variáveis usadas pelo do template
-	$tituloPagina = "Lista de Utilizadores";
+	$tituloPagina = "Pesquisa de Utilizadores";
 
 	require("view/top.template.php");
-	require("view/utilizadores_form.view2.php");
+	require("view/utilizadores_form.view3.php");
 	require("view/utilizadores.subview.php");
 	require("view/bottom.template.php");

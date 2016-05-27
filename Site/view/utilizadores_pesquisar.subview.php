@@ -56,5 +56,9 @@
 					</tr>
 				<?php endif; ?>
 		    <?php } ?>	
+
+		   <hr>
+			<a class="btn btn-info" href="utilizadores.php" role="button">Voltar à lista de Utilizadores</a>
+			<hr> 
 		</tbody>
 	</table>

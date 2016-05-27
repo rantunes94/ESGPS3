@@ -1,4 +1,4 @@
--- phpMyAdmin SQL Dump
+﻿-- phpMyAdmin SQL Dump
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `medicamento` (
   `nome` varchar(128) NOT NULL,
   `dose` varchar(12) NOT NULL,
   `frequencia` varchar(20) NOT NULL,
+  `m_paciente_id` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -123,7 +124,6 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
   `active` bit(1) NOT NULL,
@@ -135,7 +135,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`),
   UNIQUE KEY `sns` (`sns`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
@@ -143,12 +142,12 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `type`, `active`, `nome`, `morada`, `sns`, `dataNascimento`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'adm', 'adm@mail.pt', '$2y$10$L3aDYr3xUtcpWfL8tlzBLOL/J800tesDllIiIomOxzmV9MWKdwVXO', 'A', b'1', 'Paulo Maria', 'Rua das Fontes', '111111111', '1990-02-02', NULL, NULL, NULL),
-(2, 'ana', 'ana@mail.pt', '$2y$10$jK63GryszTjincRS8/vihOhGVjiimuzexSVrIwZZA2ou.fwmH6wF2', 'D', b'1', 'Rui Afonso', 'Rua de Zelmira', '222222222', '1880-02-02', NULL, NULL, NULL),
-(3, 'barata', 'barata@mail.pt', '$2y$10$0GpFZXzBQTHTuNwFtlLNguBJ.8eEoJOyHvOoWqMdNevSY3BcHC1Yi', 'F', b'1', 'Maria Zeca', 'Rua das Cidades', '333333333', '2014-02-02', NULL, NULL, NULL),
-(4, 'beatriz', 'beatriz@mail.pt', '$2y$10$q0XbgXcBXiDMCEGDuAgwH.u5MFqrFNHEE8Zn2Iti5SeCMv9G39bFC', 'R', b'1', 'Beatriz Costa', 'Avenida das Casas', '444444444', '1990-06-06', NULL, NULL, NULL),
-(5, 'carla', 'carla@mail.pt', '$2y$10$ZFz.WzrLqj6JYZVDJWVEbecpkK38KE5DvZ0JoMia99pmRJvf66mjq', 'E', b'1', 'Tomás Maria', 'Rua das Flores', '555555555', '1991-02-02', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `password`, `type`, `active`, `nome`, `morada`, `sns`, `dataNascimento`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'adm','$2y$10$L3aDYr3xUtcpWfL8tlzBLOL/J800tesDllIiIomOxzmV9MWKdwVXO', 'A', b'1', 'Paulo Maria', 'Rua das Fontes', '111111111', '1990-02-02', NULL, NULL, NULL),
+(2, 'ana','$2y$10$jK63GryszTjincRS8/vihOhGVjiimuzexSVrIwZZA2ou.fwmH6wF2', 'D', b'1', 'Rui Afonso', 'Rua de Zelmira', '222222222', '1880-02-02', NULL, NULL, NULL),
+(3, 'barata','$2y$10$0GpFZXzBQTHTuNwFtlLNguBJ.8eEoJOyHvOoWqMdNevSY3BcHC1Yi', 'F', b'1', 'Maria Zeca', 'Rua das Cidades', '333333333', '2014-02-02', NULL, NULL, NULL),
+(4, 'beatriz','$2y$10$q0XbgXcBXiDMCEGDuAgwH.u5MFqrFNHEE8Zn2Iti5SeCMv9G39bFC', 'R', b'1', 'Beatriz Costa', 'Avenida das Casas', '444444444', '1990-06-06', NULL, NULL, NULL),
+(5, 'carla','$2y$10$ZFz.WzrLqj6JYZVDJWVEbecpkK38KE5DvZ0JoMia99pmRJvf66mjq', 'E', b'1', 'Tomás Maria', 'Rua das Flores', '555555555', '1991-02-02', NULL, NULL, NULL);
 
 --
 -- Constraints for dumped tables
