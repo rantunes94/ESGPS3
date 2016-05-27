@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Maio-2016 às 19:48
+-- Generation Time: 27-Maio-2016 às 19:05
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -258,8 +258,7 @@ INSERT INTO `users` (`id`, `name`, `password`, `type`, `active`, `nome`, `morada
 (29, 'Assim', '$2y$10$4eq0OPEBZN8KlIDDhcC0reGDev6oF8WWYb4fmgs4lhyD3g4gXncte', 'M', '1', 'Assim', 'rua ASSIM', '888555444', '1994-02-25', NULL, NULL, NULL),
 (30, 'qwe', '$2y$10$cOJfjDfseZkz/474g635ruG/5am3MiFrN1StkwBR8ZrZtFyNcLp2O', 'E', '1', 'luis', 'das', '192568255', '1994-02-22', NULL, NULL, NULL),
 (31, 'SamuelONervosinho', '$2y$10$fMRljxGH6SvSvBjwfXP6iOQkvnzpkWQoQUziV.E8Xid36fOIBtzry', 'R', '1', 'Samuel', 'Rua do Samuel', '999551115', '1994-02-22', NULL, NULL, NULL),
-(32, 'ruben', '123', 'R', '1', 'ruben', 'ola', '123456456', '1994-01-01', NULL, NULL, NULL),
-(33, 'David', '$2y$10$.8h2f50iV0EV.hJ8PrlxjeyVRZUp.6O1OGGzFY4Qfrltmk83teEni', 'M', '0', 'David', 'Casal Novo, Rua a do Magro, NÂº35', '999999991', '1994-01-01', NULL, NULL, NULL);
+(33, 'David', '$2y$10$.8h2f50iV0EV.hJ8PrlxjeyVRZUp.6O1OGGzFY4Qfrltmk83teEni', 'M', '1', 'David', 'Casal Novo, Rua a do Magro, NÂº35', '999999991', '1994-01-01', NULL, NULL, NULL);
 
 --
 -- Constraints for dumped tables
