@@ -37,7 +37,7 @@
 	$medicacao = listarMedicacao($consulta_paciente_id);
 
 	// Variáveis usadas pelo do template
-	$tituloPagina = "Lista de Medicacao";
+	$tituloPagina = "Lista de Medicação";
 
 	require("view/top.template.php");
 	require("view/medicacao_form_list.php");
