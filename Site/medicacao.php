@@ -31,7 +31,7 @@
 
 	
 	// Variáveis usadas pelo do template
-	$tituloPagina = "Área de Medicação";
+	$tituloPagina = "Página Principal";
 
 	require("view/top.template.php");
 	require("medicacao_create.php");
