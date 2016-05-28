@@ -10,7 +10,7 @@
 	}
 
 	// Iniciação das variáveis obrigatórios na vista:
-	$tituloPagina = "Criar Medicacao";
+	$tituloPagina = "Criar Medicação";
 	$operacao = "I";
 	$data = array();
 	$msgErros = array();

@@ -30,7 +30,7 @@
 
 	
 	// Variáveis usadas pelo do template
-	$tituloPagina = "Página Principal";
+	$tituloPagina = "Área de Exames";
 
 	require("view/top.template.php");
 	require("exame_create.php");
