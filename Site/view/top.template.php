@@ -100,7 +100,6 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo getUserInfo()['name'];?><b class="caret"></b></a>
                                 <ul class="dropdown-menu">    
 
-                                    <li><a href='changePassword.php'>Alterar Senha</a></li>
                                     <li><a href='logout.php'>Logout</a></li>
                                 </ul>
                         </li>                    

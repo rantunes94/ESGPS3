@@ -90,7 +90,7 @@
 
   <div class='col-xs-12 text-center'> 
             <input type="reset" id="idReset" value="Limpar" class="btn btn-warning">  
-            <input type="submit" id="idSubmit" value="Alterar Paciente" class="btn btn-primary"> 
+            <input type="submit" id="idSubmit" value="Alterar Utilizador" class="btn btn-primary"> 
             
   
         </div>
