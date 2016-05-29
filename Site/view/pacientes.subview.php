@@ -18,7 +18,7 @@
 					<?php echo '<td><a class="btn btn-info" href="pacientes_update.php?id='.$linha['id'].'" role="button">Alterar Dados</a></td>';?>
 					<?php if(isUserRec()) : ?>
 					<?php echo '<td><a class="btn btn-warning" href="pacientes_updatedados.php?id='.$linha['id'].'" role="button">Informação Médica</a></td>';?>
-					
+					<td>
 							<form action="paciente_delete.php" method="POST">
 								<input type="hidden" name="id" value="<?php echo $linha['id'];?>">
 								<input type="submit" class="btn btn-danger" role="button" value="Apagar">
