@@ -4,27 +4,19 @@
 		<thead>
 	  		<tr>
 				<th>Nome</th>
-				<th>Morada</th>
 				<th>SNS</th>
-				<th>Data Nascimento</th>
 			</tr>	 	
 		</thead>		  
 		<tbody>
 		 	<?php
 		 		foreach ($pacientes as $linha) {
 					echo "\n<tr>";
-					echo "<td>".$linha['nomeP']."</td>";
-					echo "<td>".$linha['moradaP']."</td>";
+					echo "<td width=300>".$linha['nomeP']."</td>";
 					echo "<td>".$linha['snsP']."</td>";
-					echo "<td>".$linha['dataNascimP']."</td>";
 					
 					?>
-					<?php echo '<td><a class="btn btn-info" href="pacientes_update.php?id='.$linha['id'].'" role="button">Alterar</a></td>';?>
-					<?php if (isUserRec()) :  ?>
-					<?php echo '<td><a class="btn btn-warning" href="exame.php?id='.$linha['id'].'" role="button">Adicionar Exame</a></td>';?>
-					
-					<?php echo '<td><a class="btn btn-warning" href="medicacao.php?id='.$linha['id'].'" role="button">Adicionar Medicação</a></td>';?>
-				<?php endif ?>
+					<?php echo '<td><a class="btn btn-info" href="pacientes_update.php?id='.$linha['id'].'" role="button">Alterar Dados</a></td>';?>
+					<?php echo '<td><a class="btn btn-warning" href="pacientes_updatedados.php?id='.$linha['id'].'" role="button">Informação Médica</a></td>';?>
 						<td>
 							<form action="paciente_delete.php" method="POST">
 								<input type="hidden" name="id" value="<?php echo $linha['id'];?>">

@@ -10,7 +10,7 @@
 	}
 
 	// Iniciação das variáveis obrigatórios na vista:
-	$tituloPagina = "Detalhes da Medicacao";
+	$tituloPagina = "Detalhes da Medicação";
 
 	// Variáveis que vêm na Sessão
 	if (isset($_SESSION["flash_msgGlobal"])){
