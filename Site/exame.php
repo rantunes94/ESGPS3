@@ -28,6 +28,10 @@
 	if (isset($_GET['nome']))
 		$nome =$_GET['nome'];
 
+	if (isset($_GET['observacoes']))
+		$observacoes =$_GET['observacoes'];
+
+
 	
 	// Variáveis usadas pelo do template
 	$tituloPagina = "Área de Exames";
