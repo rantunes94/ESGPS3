@@ -47,7 +47,7 @@
 	<div class="form-group">
 		<div <?php echoClassformGroup('observacoes',$msgErros,$dadosSubmetidos);?>>
 			<label for="idobservacoes">Observacoes</label> 
-			<input type="text" id="idobservacoes" name="observacoes"<?php echoFieldValue("observacoes", $data) ?> class="form-control">
+			<textarea cols="40" rows="5" type="text" id="idobservacoes" name="observacoes"<?php echoFieldValue("observacoes", $data) ?> class="form-control"></textarea>
 			<?php echoMsgErro("observacoes", $msgErros) ?>
 		</div>
 	</div>	
