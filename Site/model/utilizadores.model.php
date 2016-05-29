@@ -157,8 +157,14 @@ function alterarUtilizador($name,$password,$type,$nome,$morada,$sns,$dataNascime
 function validarUtilizadorSusp($active){
 	$arrayMensagens = array();
 
-	if(trim($active)=='1' && trim($active)=='0' )
+	
+		
+	if (trim($active)=="")
+		$arrayMensagens["active"] = "Tipo conta é obrigatório";
+	else
+		if(trim($active)!='1' && trim($active)!='0' )
 		$arrayMensagens["active"] = "O estado da conta tem que ser 0(inactiva) ou 1(ativa)";
+
 
 	return $arrayMensagens;	
 }
