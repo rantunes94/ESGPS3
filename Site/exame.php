@@ -38,4 +38,4 @@
 
 	require("view/top.template.php");
 	require("exame_create.php");
-	require("view/bottom.template.php");
+

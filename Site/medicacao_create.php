@@ -47,9 +47,7 @@
 			if ($novoID!=-1){
 				$_SESSION["flash_msgGlobal"] = "O medicamento foi criada com sucesso";
 				$_SESSION["flash_tipoMsgGlobal"] = "S";
-
-				header("Location: medicacao_show.php?id=$novoID");
-							
+				header("Location: medicacao_show.php?id=$novoID");							
 			}
 			else {
 				$msgGlobal= "Houve um problema ao criar o medicamento";
@@ -58,4 +56,7 @@
 		}
 	}
 
+	require("view/top.template.php");
 	require("view/medicacao_form.view.php");
+	//require("view/bottom.template.php");
+ 	

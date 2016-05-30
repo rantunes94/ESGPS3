@@ -62,4 +62,6 @@
 		}
 	}
 
+	require("view/top.template.php");
 	require("view/exames_form.view.php");
+	
