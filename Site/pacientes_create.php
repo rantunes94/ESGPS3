@@ -48,4 +48,7 @@
 		}
 	}
 
+	require("view/top.template.php");
 	require("view/pacientes_form.view.php");
+	require("view/bottom.template.php");
+	
