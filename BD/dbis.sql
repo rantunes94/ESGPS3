@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Maio-2016 às 19:05
+-- Generation Time: 31-Maio-2016 às 23:31
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `exame` (
   `paciente_id` int(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_exame_paciente1_idx` (`paciente_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
 
 --
 -- Extraindo dados da tabela `exame`
@@ -117,7 +117,10 @@ INSERT INTO `exame` (`id`, `nome`, `observacoes`, `paciente_id`) VALUES
 (36, 'Endoscopia', 'Tudo ok', 5),
 (37, 'TAC', 'perna partida', 1),
 (38, 'Endoscopia', 'Tudo ok', 1),
-(39, 'Endoscopia', 'Tudo ok', 1);
+(39, 'Endoscopia', 'Tudo ok', 1),
+(40, 'Endoscopia', 'Tudo ok', 1),
+(41, 'Raio X', 'Factura na MÃ£o', 7),
+(42, 'Endoscopia', 'sadasdasda', 1);
 
 -- --------------------------------------------------------
 
@@ -132,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `medicamento` (
   `frequencia` varchar(20) NOT NULL,
   `m_paciente_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Extraindo dados da tabela `medicamento`
@@ -156,7 +159,12 @@ INSERT INTO `medicamento` (`id`, `nome`, `dose`, `frequencia`, `m_paciente_id`) 
 (15, 'ben-u-ron', '1/2', '8 em 8 horas', 4),
 (16, 'Endoscopia', '1/2', '8 em 8 horas', 7),
 (17, 'Endoscopia', '1/2', '8 em 8 horas', 0),
-(18, 'Endoscopia', '1/2', '8 em 8 horas', 1);
+(18, 'Endoscopia', '1/2', '8 em 8 horas', 1),
+(19, 'ben-u-ron', '1/2', '8 em 8 horas', 1),
+(20, 'AnalgÃ©sico', '1', '8 em 8 horas', 7),
+(21, 'Endoscopia', '1/2', '8 em 8 horas', 1),
+(22, 'a', '1', '8', 1),
+(23, 'Endoscopia', '1/2', '8 em 8 horas', 1);
 
 -- --------------------------------------------------------
 
@@ -197,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `dataNascimP` date NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `sns` (`snsP`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Extraindo dados da tabela `paciente`
@@ -212,14 +220,13 @@ INSERT INTO `paciente` (`id`, `nomeP`, `moradaP`, `snsP`, `dataNascimP`) VALUES
 (6, 'a3', 'a3', '123123112', '2016-02-20'),
 (7, 'a4', 'a4', '321321321', '2016-05-10'),
 (8, 'a5', 'a5', '456456456', '2016-09-09'),
-(9, 'a6', 'a6', '67867867', '2016-02-02'),
 (10, 'a10', 'a10', '789789999', '2016-08-08'),
 (11, 'a11', 'a11', '987987987', '2016-05-18'),
 (13, 'sdada', 'Rua da Julia', '123124444', '1994-04-02'),
 (15, 'sdada', 'Rua da Julia', '123124455', '1994-04-02'),
 (18, 'sdada', 'asda', '111111111', '1998-02-02'),
-(20, 'sdada', 'asda', '111111112', '1998-02-02'),
-(21, 'a2', 'Rua da Julia', '222222222', '1990-02-02');
+(23, 'davod', 'asdas', '123456456', '1990-02-02'),
+(24, 'David GonÃ§alves Santos', 'Rua do Zeze', '252252543', '1990-02-02');
 
 -- --------------------------------------------------------
 
@@ -250,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `password`, `type`, `active`, `nome`, `morada`, `sns`, `dataNascimento`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'adm', '$2y$10$L3aDYr3xUtcpWfL8tlzBLOL/J800tesDllIiIomOxzmV9MWKdwVXO', 'A', '1', 'Paulo Maria', 'Rua das Fontes', '111111111', '1990-02-02', NULL, NULL, NULL),
-(2, 'ana', '$2y$10$1rz8tRm4PT1vvyYAauoUj.2eCoNOUgxqOa9n2ALj1ce.sTs5HZFiS', 'M', '1', 'Rui Afonso', 'Rua de Zelmira', '222222222', '1880-02-02', NULL, NULL, NULL),
+(2, 'ana', '$2y$10$iiLMY89fk7cc3DzSDDRUQu0NTCkcabiR.4/TVJWJHxkjdTTdYaF4G', 'M', '1', 'Rui Afonso', 'Rua de Zelmira', '222222222', '1880-02-02', NULL, NULL, NULL),
 (3, 'barata', '$2y$10$HmGz/ZxRCaNijajtQKFGeOEq615o7WRGnuDvrwNp8Uh.TinwNKTdK', 'R', '1', 'Maria Zeca', 'Rua das Cidades', '333333333', '2014-02-02', NULL, NULL, NULL),
 (4, 'beatriz', '$2y$10$q0XbgXcBXiDMCEGDuAgwH.u5MFqrFNHEE8Zn2Iti5SeCMv9G39bFC', 'R', '1', 'Beatriz Costa', 'Avenida das Casas', '444444444', '1990-06-06', NULL, NULL, NULL),
 (5, 'carla', '$2y$10$ZFz.WzrLqj6JYZVDJWVEbecpkK38KE5DvZ0JoMia99pmRJvf66mjq', 'E', '1', 'Tomás Maria', 'Rua das Flores', '555555555', '1991-02-02', NULL, NULL, NULL),
