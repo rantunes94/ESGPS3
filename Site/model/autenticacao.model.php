@@ -194,7 +194,7 @@ function isUserRec(){
 
 function isUserDou(){
     if (isset($_SESSION['UserInfo']))
-        return $_SESSION['UserInfo']['type']=='D';
+        return $_SESSION['UserInfo']['type']=='M';
     return false;
 }
 
