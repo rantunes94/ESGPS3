@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	require_once("model/medicacao.model.php");
 	require_once("model/pacientes.model.php");
 	require_once("inc/controllerInit.php");
@@ -35,4 +35,3 @@
 
 	require("view/top.template.php");
 	require("medicacao_create.php");
-	require("view/bottom.template.php");
