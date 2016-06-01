@@ -24,7 +24,7 @@ namespace projeto
         private void button1_Click(object sender, EventArgs e)
         {
 
-            SqlConnection sqlConnection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\luis_\\OneDrive\\Documentos\\Visual Studio 2015\\Projects\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
+            SqlConnection sqlConnection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\Projeto\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
             if (!string.IsNullOrWhiteSpace(textBox1.Text))

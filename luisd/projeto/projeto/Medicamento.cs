@@ -27,7 +27,7 @@ namespace projeto
         {
             if (!string.IsNullOrWhiteSpace(nomeTextBox.Text) && !string.IsNullOrWhiteSpace(doseTextBox.Text) && !string.IsNullOrWhiteSpace(frequenciaTextBox.Text))
             {
-                SqlConnection sqlConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\luis_\\OneDrive\\Documentos\\Visual Studio 2015\\Projects\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
+                SqlConnection sqlConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\Projeto\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
                 SqlCommand sqlComm = new SqlCommand();
                 sqlComm = sqlConn.CreateCommand();
 
