@@ -26,23 +26,18 @@ namespace projeto
 
         private void adicionar_Click(object sender, EventArgs e)
         {
-            //verificar se existe
-
-            //se nao existe
-            //criar sintoma
-            //get id, adicionar cons sintomas
-
-
-
-            int id_sintoma = verificar(id_consulta);
-            if (id_sintoma == 0)
+            if (!string.IsNullOrWhiteSpace(sTextBox.Text))
             {
-                adicionar1();
-                adicionarc(newId);
-            }
-            else
-            {
-                adicionarc(id_sintoma);
+                int id_sintoma = verificar(id_consulta);
+                if (id_sintoma == 0)
+                {
+                    adicionar1();
+                    adicionarc(newId);
+                }
+                else
+                {
+                    adicionarc(id_sintoma);
+                }
             }
         }
 

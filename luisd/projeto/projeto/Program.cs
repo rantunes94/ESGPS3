@@ -16,8 +16,9 @@ namespace projeto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new menu_principal());
             //Application.Run(new Pesquisa_enfermeiro());
-            Application.Run(new Medico_menu(1));
+            //Application.Run(new Medico_menu(1));
             //Application.Run(new Medico_consulta(1));
         }
     }

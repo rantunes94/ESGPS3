@@ -43,16 +43,6 @@
             histlabel1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(84, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Criar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MotivoLabel
             // 
             MotivoLabel.AutoSize = true;
@@ -61,13 +51,6 @@
             MotivoLabel.Size = new System.Drawing.Size(53, 17);
             MotivoLabel.TabIndex = 22;
             MotivoLabel.Text = "Motivo:";
-            // 
-            // TextBoxm
-            // 
-            this.TextBoxm.Location = new System.Drawing.Point(112, 32);
-            this.TextBoxm.Name = "TextBoxm";
-            this.TextBoxm.Size = new System.Drawing.Size(100, 22);
-            this.TextBoxm.TabIndex = 23;
             // 
             // CondiLabel
             // 
@@ -78,13 +61,6 @@
             CondiLabel.TabIndex = 24;
             CondiLabel.Text = "Condição:";
             // 
-            // textBoxc
-            // 
-            this.textBoxc.Location = new System.Drawing.Point(112, 60);
-            this.textBoxc.Name = "textBoxc";
-            this.textBoxc.Size = new System.Drawing.Size(100, 22);
-            this.textBoxc.TabIndex = 25;
-            // 
             // proLabel
             // 
             proLabel.AutoSize = true;
@@ -94,13 +70,6 @@
             proLabel.TabIndex = 26;
             proLabel.Text = "Problema:";
             // 
-            // TextBoxp
-            // 
-            this.TextBoxp.Location = new System.Drawing.Point(112, 88);
-            this.TextBoxp.Name = "TextBoxp";
-            this.TextBoxp.Size = new System.Drawing.Size(100, 22);
-            this.TextBoxp.TabIndex = 27;
-            // 
             // histlabel1
             // 
             histlabel1.AutoSize = true;
@@ -109,6 +78,37 @@
             histlabel1.Size = new System.Drawing.Size(59, 17);
             histlabel1.TabIndex = 29;
             histlabel1.Text = "Historial";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(74, 170);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Criar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TextBoxm
+            // 
+            this.TextBoxm.Location = new System.Drawing.Point(112, 32);
+            this.TextBoxm.Name = "TextBoxm";
+            this.TextBoxm.Size = new System.Drawing.Size(100, 22);
+            this.TextBoxm.TabIndex = 23;
+            // 
+            // textBoxc
+            // 
+            this.textBoxc.Location = new System.Drawing.Point(112, 60);
+            this.textBoxc.Name = "textBoxc";
+            this.textBoxc.Size = new System.Drawing.Size(100, 22);
+            this.textBoxc.TabIndex = 25;
+            // 
+            // TextBoxp
+            // 
+            this.TextBoxp.Location = new System.Drawing.Point(112, 88);
+            this.TextBoxp.Name = "TextBoxp";
+            this.TextBoxp.Size = new System.Drawing.Size(100, 22);
+            this.TextBoxp.TabIndex = 27;
             // 
             // textBoxh
             // 
@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 357);
+            this.ClientSize = new System.Drawing.Size(242, 222);
             this.Controls.Add(histlabel1);
             this.Controls.Add(this.textBoxh);
             this.Controls.Add(this.button1);

@@ -27,36 +27,35 @@ namespace projeto
             SqlConnection sqlConnection1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\luis_\\OneDrive\\Documentos\\Visual Studio 2015\\Projects\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
-
-            cmd.CommandText = "SELECT * FROM paciente where sns =" + textBox1.Text;
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = sqlConnection1;
-
-            sqlConnection1.Open();
-
-            reader = cmd.ExecuteReader();
-            // Data is accessible through the DataReader object here.
-
-
-
-            if (reader.HasRows)
+            if (!string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                while (reader.Read())
+                cmd.CommandText = "SELECT * FROM paciente where sns =" + textBox1.Text;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlConnection1;
+
+                sqlConnection1.Open();
+
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    Console.WriteLine("{0}\t{1}\t{2}\t{3}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
-                    transferir(reader.GetInt32(0), reader.GetString(1));
+                    while (reader.Read())
+                    {
+                        Console.WriteLine("{0}\t{1}\t{2}\t{3}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+                        transferir(reader.GetInt32(0), reader.GetString(1));
+                    }
+
                 }
-                
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                }
+                reader.Close();
+
+
+
+                sqlConnection1.Close();
             }
-            else
-            {
-                Console.WriteLine("No rows found.");
-            }
-            reader.Close();
-
-
-
-            sqlConnection1.Close();
         }
 
         private void transferir(int id, string nome)

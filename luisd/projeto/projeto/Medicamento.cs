@@ -25,16 +25,18 @@ namespace projeto
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(nomeTextBox.Text) && !string.IsNullOrWhiteSpace(doseTextBox.Text) && !string.IsNullOrWhiteSpace(frequenciaTextBox.Text))
+            {
+                SqlConnection sqlConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\luis_\\OneDrive\\Documentos\\Visual Studio 2015\\Projects\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
+                SqlCommand sqlComm = new SqlCommand();
+                sqlComm = sqlConn.CreateCommand();
 
-            SqlConnection sqlConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\luis_\\OneDrive\\Documentos\\Visual Studio 2015\\Projects\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
-            SqlCommand sqlComm = new SqlCommand();
-            sqlComm = sqlConn.CreateCommand();
+                sqlComm.CommandText = "INSERT INTO medicamento (nome, dose, frequencia, id_consulta) VALUES ('" + nomeTextBox.Text + "','" + doseTextBox.Text + "','" + frequenciaTextBox.Text + "','" + id_consulta + "');";
 
-            sqlComm.CommandText = "INSERT INTO medicamento (nome, dose, frequencia, id_consulta) VALUES ('" + nomeTextBox.Text + "','" + doseTextBox.Text + "','" + frequenciaTextBox.Text + "','" + id_consulta + "');";
-
-            sqlConn.Open();
-            sqlComm.ExecuteNonQuery();
-            sqlConn.Close();
+                sqlConn.Open();
+                sqlComm.ExecuteNonQuery();
+                sqlConn.Close();
+            }
         }
     }
 }

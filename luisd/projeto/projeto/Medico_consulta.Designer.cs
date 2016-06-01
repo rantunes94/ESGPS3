@@ -158,7 +158,7 @@
             // 
             this.button8.Location = new System.Drawing.Point(432, 38);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(140, 23);
+            this.button8.Size = new System.Drawing.Size(164, 23);
             this.button8.TabIndex = 27;
             this.button8.Text = "Analise anterior";
             this.button8.UseVisualStyleBackColor = true;

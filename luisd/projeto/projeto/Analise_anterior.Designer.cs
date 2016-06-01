@@ -53,7 +53,8 @@
             // 
             // Id
             // 
-            this.Id.Text = "Id";
+            this.Id.Text = "Número da Consulta";
+            this.Id.Width = 143;
             // 
             // dataGridView1
             // 
@@ -66,7 +67,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(244, 114);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(554, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(678, 307);
             this.dataGridView1.TabIndex = 5;
             // 
             // motivo
@@ -102,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 494);
+            this.ClientSize = new System.Drawing.Size(954, 476);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);

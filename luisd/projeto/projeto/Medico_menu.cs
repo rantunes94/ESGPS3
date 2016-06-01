@@ -60,24 +60,11 @@ namespace projeto
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = listView1.FocusedItem.Index;
-            //listView1.ItemSelectionChanged += listView1_ItemSelectionChanged;
             string text = listView1.Items[index].Text;
             int num = int.Parse(text);
             transferir(num);
             
         }
-
-
-        /*private void listView1_ItemSelectionChanged(
-    object sender,
-    ListViewItemSelectionChangedEventArgs e)
-        {
-            if (e.Item.BackColor == Color.LightGray)
-            {
-                e.Item.Selected = false;
-                e.Item.Focused = false;
-            }
-        }*/
 
     }
 }

@@ -87,7 +87,7 @@
             this.Nome,
             this.Dose,
             this.Frequencia});
-            this.dataGridView1.Location = new System.Drawing.Point(238, 144);
+            this.dataGridView1.Location = new System.Drawing.Point(236, 93);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(554, 307);
@@ -112,7 +112,7 @@
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Id});
-            this.listView1.Location = new System.Drawing.Point(40, 144);
+            this.listView1.Location = new System.Drawing.Point(40, 93);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(150, 307);
             this.listView1.TabIndex = 3;
@@ -122,13 +122,13 @@
             // 
             // Id
             // 
-            this.Id.Text = "Id";
+            this.Id.Text = "Número da consulta";
             // 
             // Medicamento_anterior
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 512);
+            this.ClientSize = new System.Drawing.Size(830, 422);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);

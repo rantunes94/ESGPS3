@@ -44,7 +44,7 @@
             this.Id});
             this.listView1.Location = new System.Drawing.Point(12, 73);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(67, 307);
+            this.listView1.Size = new System.Drawing.Size(156, 307);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -52,17 +52,18 @@
             // 
             // Id
             // 
-            this.Id.Text = "Id";
+            this.Id.Text = "Número da Consulta";
+            this.Id.Width = 142;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sintoma});
-            this.dataGridView1.Location = new System.Drawing.Point(211, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(370, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(554, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(377, 307);
             this.dataGridView1.TabIndex = 8;
             // 
             // Sintoma
@@ -83,9 +84,9 @@
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
-            this.listView2.Location = new System.Drawing.Point(103, 73);
+            this.listView2.Location = new System.Drawing.Point(187, 73);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(67, 307);
+            this.listView2.Size = new System.Drawing.Size(159, 307);
             this.listView2.TabIndex = 10;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -93,13 +94,14 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Id";
+            this.columnHeader1.Text = "Número do sintoma";
+            this.columnHeader1.Width = 135;
             // 
             // Sintomas_anteriores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 392);
+            this.ClientSize = new System.Drawing.Size(769, 392);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.dataGridView1);

@@ -25,15 +25,18 @@ namespace projeto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\luis_\\OneDrive\\Documentos\\Visual Studio 2015\\Projects\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
-            SqlCommand sqlComm = new SqlCommand();
-            sqlComm = sqlConn.CreateCommand();
+            if (!string.IsNullOrWhiteSpace(TextBoxm.Text) && !string.IsNullOrWhiteSpace(textBoxc.Text) && !string.IsNullOrWhiteSpace(TextBoxp.Text) && !string.IsNullOrWhiteSpace(textBoxh.Text)) 
+            {
+                SqlConnection sqlConn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename='C:\\Users\\luis_\\OneDrive\\Documentos\\Visual Studio 2015\\Projects\\BaseDados.mdf';Integrated Security=True;Connect Timeout=30");
+                SqlCommand sqlComm = new SqlCommand();
+                sqlComm = sqlConn.CreateCommand();
 
-            sqlComm.CommandText = "INSERT INTO analise (motivo, condicao, problema, historial, id_consulta) VALUES ('" + TextBoxm.Text + "','" + textBoxc.Text + "','" + TextBoxp.Text + "','" + textBoxh.Text + "','" + id_consulta + "');";
+                sqlComm.CommandText = "INSERT INTO analise (motivo, condicao, problema, historial, id_consulta) VALUES ('" + TextBoxm.Text + "','" + textBoxc.Text + "','" + TextBoxp.Text + "','" + textBoxh.Text + "','" + id_consulta + "');";
 
-            sqlConn.Open();
-            sqlComm.ExecuteNonQuery();
-            sqlConn.Close();
+                sqlConn.Open();
+                sqlComm.ExecuteNonQuery();
+                sqlConn.Close();
+            }
         }
     }
 }

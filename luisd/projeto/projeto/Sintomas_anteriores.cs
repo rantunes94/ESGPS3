@@ -64,10 +64,16 @@ namespace projeto
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Console.WriteLine("No rows found.");
+           /* int index = listView1.FocusedItem.Index;
+            string text = listView1.Items[index].Text;*/
+            //int index = listView1.FocusedItem.Index;
             int index = listView1.FocusedItem.Index;
-            Console.WriteLine(index);
 
-            cmd.CommandText = "SELECT * FROM r_cons_sint where id_consulta ='" + listView1.Items[index].SubItems[0].Text + "';";
+            string text = listView1.Items[index].Text;
+            int numindex = int.Parse(text);
+            Console.WriteLine(numindex);
+
+            cmd.CommandText = "SELECT * FROM r_cons_sint where id_consulta ='" + numindex + "';";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection1;
 
@@ -83,11 +89,7 @@ namespace projeto
             {
                 while (reader.Read())
                 {
-                    lista2(reader.GetInt32(0));
-                    /*dataGridView1.Rows.Add();
-                    dataGridView1.Rows[contador].Cells[0].Value = reader.GetInt32(1);
-                    /*dataGridView1.Rows[contador].Cells[1].Value = reader.GetInt32(2);
-                    dataGridView1.Rows[contador].Cells[2].Value = reader.GetInt32(3);*/
+                    lista2(reader.GetInt32(1));
                     contador++;
                 }
             }
@@ -97,16 +99,16 @@ namespace projeto
             }
             reader.Close();
             sqlConnection1.Close();
-
-            //Converter();
         }
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = listView2.FocusedItem.Index;
-            Console.WriteLine(index);
+            string text = listView2.Items[index].Text;
+            int numindex = int.Parse(text);
+            Console.WriteLine(numindex);
 
-            cmd.CommandText = "SELECT sintoma FROM sintoma where id =" + listView2.Items[index].SubItems[0].Text;
+            cmd.CommandText = "SELECT sintoma FROM sintoma where id ='" + numindex + "';";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection1;
 

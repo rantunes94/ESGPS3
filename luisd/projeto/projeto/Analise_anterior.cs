@@ -81,6 +81,7 @@ namespace projeto
                     dataGridView1.Rows[contador].Cells[0].Value = reader.GetString(1);
                     dataGridView1.Rows[contador].Cells[1].Value = reader.GetString(2);
                     dataGridView1.Rows[contador].Cells[2].Value = reader.GetString(3);
+                    dataGridView1.Rows[contador].Cells[3].Value = reader.GetString(4);
                     contador++;
                 }
             }

@@ -17,3 +17,4 @@ C:\Users\luis_\OneDrive\Documentos\Visual Studio 2015\Projects\projeto\projeto\o
 C:\Users\luis_\OneDrive\Documentos\Visual Studio 2015\Projects\projeto\projeto\obj\Debug\projeto.Sintomas.resources
 C:\Users\luis_\OneDrive\Documentos\Visual Studio 2015\Projects\projeto\projeto\obj\Debug\projeto.Analise_anterior.resources
 C:\Users\luis_\OneDrive\Documentos\Visual Studio 2015\Projects\projeto\projeto\obj\Debug\projeto.Sintomas_anteriores.resources
+C:\Users\luis_\OneDrive\Documentos\Visual Studio 2015\Projects\projeto\projeto\obj\Debug\projeto.menu_principal.resources
